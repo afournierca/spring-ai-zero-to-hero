@@ -1,0 +1,27 @@
+spring:
+  config:
+    import: "optional:classpath:/creds.yaml"
+  ai:
+    azure:
+      openai:
+        chat:
+          options:
+            functions:
+              - weatherFunction
+            temperature: 0.7
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    org:
+      springframework:
+        ai: DEBUG
+
